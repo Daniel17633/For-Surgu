@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="cssforsite.css">
   <title>Document</title>
 </head>
 <body>
@@ -19,15 +20,18 @@
   <li>Работа</li>
   <li>Список покупок</li>
 </ul>
+        </div>
         
-    <!-- Можно добавить другие блоки справа, если нужно -->
+    <input type="text" name="text" class="search" placeholder="Поиск">
+<button type="button" class="buttonsearch">  
+</button> 
+      <button type="button">Сдать отчёт</button>
 </body>
 </html>
 
+___________________________________________
 
-_______________________________________________________________________________
-
-   body, html {
+body, html {
       height: 100%;
       margin: 0;
       padding: 0;
@@ -60,6 +64,7 @@ _______________________________________________________________________________
       box-sizing: border-box;
       overflow-y: auto; /* если текста много, появится скролл */
       font-size:18px;
+      position: relative;
     }
 
 .newmark{
@@ -76,13 +81,12 @@ _______________________________________________________________________________
 .tegs{
   font-size:24px;
   color:#74777B;
-  position:absolute;
+  position:absolute;  
   padding-left:30px;
   padding-top:50px;
 }
 
 .tags-list {
-  position:absolute;
   padding-left:50px;
   margin-top: 100px;
   color: black;
@@ -100,5 +104,43 @@ li{
   cursor: pointer;
   border-radius:15px;
   width:250px;
+}
+
+.search{
+  width:500px;
+  height:40px;
+  color:#FCFCFC;
+  padding-left:10px;
+  border-radius:10px;
+  background-color:#F4F4F4;
+  border:none;
+  margin:36px 0px 0px 36px;
+  border-color:red;
+}
+
+input::placeholder{color: #74777B;}
+
+input, select, textarea{
+    color: black;
+}
+
+textarea:focus, input:focus {
+    color: black;
+}
+
+.buttonsearch{
+  color:blue;
+  height:40px;
+  width:40px;
+  margin-top:20px;
+  border:none;
+  border-radius:10px;
+  background-color:#4499FF;
+  position:absolute;
+  margin:36px 0px 0px 12px;
+  background-image: url(https://img.icons8.com/?size=100&id=7695&format=png&color=FFFFFF);
+  background-size:25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
