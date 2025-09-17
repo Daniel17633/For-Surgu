@@ -25,7 +25,7 @@
     <input type="text" name="text" class="search" placeholder="Поиск">
 <button type="button" class="buttonsearch">  
 </button> 
-      <button type="button">Сдать отчёт</button>
+      <button type="button" class="otchet">Сдать отчёт</button>
 </body>
 </html>
 
@@ -144,3 +144,8 @@ textarea:focus, input:focus {
   background-position: center;
 }
 
+.otchet{
+  margin-left:35px;
+  margin-top:30px;
+  height:100px;
+}
