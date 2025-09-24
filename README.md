@@ -71,3 +71,44 @@ function sumInputs() {
    document.getElementById("out-1").innerHTML = num1 + num2;
    
 }
+
+
+
+
+
+
+
+
+
+
+function sumInputs() {
+    let input1 = document.getElementById("num1").value.trim();
+    let input2 = document.getElementById("num2").value.trim();
+    
+    let errorMsg = "";
+    
+    // Проверяем первое поле
+    if (input1 === "" || isNaN(Number(input1))) {
+        errorMsg += "Ошибка в первом поле: введены буквы (или ничего) вместо цифр. ";
+    }
+    
+    // Проверяем второе поле
+    if (input2 === "" || isNaN(Number(input2))) {
+        errorMsg += "Ошибка во втором поле: введены буквы (или ничего) вместо цифр. ";
+    }
+    
+    // Если есть ошибки, выводим сообщение
+    if (errorMsg !== "") {
+        document.getElementById("out-1").innerHTML = errorMsg;
+        document.getElementById("out-1").style.color = "red"; // Дополнительно: красный цвет для ошибки
+        return;
+    }
+    
+    // Если всё OK, вычисляем сумму
+    let num1 = Number(input1);
+    let num2 = Number(input2);
+    let result = num1 + num2;
+    
+    document.getElementById("out-1").innerHTML = result;
+    document.getElementById("out-1").style.color = "black"; // Сброс цвета для результата
+}
