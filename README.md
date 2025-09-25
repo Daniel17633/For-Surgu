@@ -64,51 +64,26 @@ button {
     }
 ________________________________________
 function sumInputs() {
-
-   let num1 = Number( document.getElementById("num1").value );
-   let num2 = Number( document.getElementById("num2").value );
+   let value1 = document.getElementById("num1").value.trim();
+   let value2 = document.getElementById("num2").value.trim();
    
-   document.getElementById("out-1").innerHTML = num1 + num2;
+   let hasLetters1 = /[a-zA-Zа-яА-Я]/.test(value1);
+   let hasLetters2 = /[a-zA-Zа-яА-Я]/.test(value2);
    
+   if (hasLetters1 && hasLetters2) {
+       document.getElementById("out-1").innerHTML = 'ошибка в обоих строках';
+   } else if (hasLetters1) {
+       document.getElementById("out-1").innerHTML = 'ошибка в 1 строке';
+   } else if (hasLetters2) {
+       document.getElementById("out-1").innerHTML = 'ошибка в 2 строке';
+   } else {
+       let num1 = Number(value1);
+       let num2 = Number(value2);
+       if (isNaN(num1) || isNaN(num2)) {
+           document.getElementById("out-1").innerHTML = 'ошибка ввода'; // Дополнительная проверка на нечисловые значения без букв
+       } else {
+           document.getElementById("out-1").innerHTML = num1 + num2;
+       }
+   }
 }
 
-
-
-
-
-
-
-
-
-
-function sumInputs() {
-    let input1 = document.getElementById("num1").value.trim();
-    let input2 = document.getElementById("num2").value.trim();
-    
-    let errorMsg = "";
-    
-    // Проверяем первое поле
-    if (input1 === "" || isNaN(Number(input1))) {
-        errorMsg += "Ошибка в первом поле: введены буквы (или ничего) вместо цифр. ";
-    }
-    
-    // Проверяем второе поле
-    if (input2 === "" || isNaN(Number(input2))) {
-        errorMsg += "Ошибка во втором поле: введены буквы (или ничего) вместо цифр. ";
-    }
-    
-    // Если есть ошибки, выводим сообщение
-    if (errorMsg !== "") {
-        document.getElementById("out-1").innerHTML = errorMsg;
-        document.getElementById("out-1").style.color = "red"; // Дополнительно: красный цвет для ошибки
-        return;
-    }
-    
-    // Если всё OK, вычисляем сумму
-    let num1 = Number(input1);
-    let num2 = Number(input2);
-    let result = num1 + num2;
-    
-    document.getElementById("out-1").innerHTML = result;
-    document.getElementById("out-1").style.color = "black"; // Сброс цвета для результата
-}
