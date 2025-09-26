@@ -83,7 +83,43 @@ function sumInputs() {
            document.getElementById("out-1").innerHTML = 'ошибка ввода'; // Дополнительная проверка на нечисловые значения без букв
        } else {
            document.getElementById("out-1").innerHTML = num1 + num2;
+
+
        }
    }
 }
+_____________________________________________________________________________________________________
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+float add(float a, float b) {
+    if (a == 0) {
+        cout << "Деление на ноль!" << endl;
+        return 0;
+    }
+    return -b / a;
+}
+
+int main()
+{   
+    int k, l, m;
+    float result;
+    
+    cout << "Введите число k: ";
+    cin >> k;
+    
+    cout << "Введите число l: ";
+    cin >> l;
+    
+    cout << "Введите число m: ";
+    cin >> m;
+    
+    int promegutok1 = max(pow(k, 2), l);
+    int promegutok2 = max(pow(3, m), pow(l, 3));
+    
+    float x = add(max(promegutok1, pow(m, 0.5)), max(promegutok2, k + l));
+    
+    cout << "Результат: " << x << endl;
+    return 0;
+}            
